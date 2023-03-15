@@ -1,0 +1,17 @@
+% Ignore rosbags
+*.bag
+
+% Ignore compressed files
+*.zip
+
+*.swp
+.ipynb_checkpoints/
+
+__pycache__/
+*.egg-info/
+*.pyc
+
+.vscode
+
+build/
+dist/
