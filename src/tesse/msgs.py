@@ -91,6 +91,12 @@ class Transform(PositionMessage):
     def __init__(self, translate_x=0, translate_z=0, rotate_y=0):
         super(Transform, self).__init__(('f', translate_x), ('f', translate_z), ('f', rotate_y))
 
+class Dest(PositionMessage):
+    __tag__ = 'DEST'
+
+    def __init__(self, translate_x=0, translate_y=0, translate_z=0):
+        super(Dest, self).__init__(('f', translate_x), ('f', translate_y), ('f', translate_z))
+
 
 class AddForce(PositionMessage):
     __tag__ = 'xBff'

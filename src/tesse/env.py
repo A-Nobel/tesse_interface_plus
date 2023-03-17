@@ -35,6 +35,7 @@ class Env(object):
         metadata_port=9001,
         image_port=9002,
         step_port=9005,
+        # des_port = 9006,
     ):
         self.simulation_ip = simulation_ip
         self.own_ip = own_ip
