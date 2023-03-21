@@ -1,24 +1,4 @@
-###################################################################################################
-# DISTRIBUTION STATEMENT A. Approved for public release. Distribution is unlimited.
-#
-# This material is based upon work supported by the Under Secretary of Defense for Research and
-# Engineering under Air Force Contract No. FA8702-15-D-0001. Any opinions, findings, conclusions
-# or recommendations expressed in this material are those of the author(s) and do not necessarily
-# reflect the views of the Under Secretary of Defense for Research and Engineering.
-#
-# (c) 2020 Massachusetts Institute of Technology.
-#
-# MIT Proprietary, Subject to FAR52.227-11 Patent Rights - Ownership by the contractor (May 2014)
-#
-# The software/firmware is provided to you on an As-Is basis
-#
-# Delivered to the U.S. Government with Unlimited Rights, as defined in DFARS Part 252.227-7013
-# or 7014 (Feb 2014). Notwithstanding any copyright notice, U.S. Government rights in this work
-# are defined by DFARS 252.227-7013 or DFARS 252.227-7014 as detailed above. Use of this work other
-# than as specifically authorized by the U.S. Government may violate any copyrights that exist in
-# this work.
-###################################################################################################
-
+#-*-coding:utf-8-*-
 import struct
 import numpy as np
 from PIL import Image
@@ -91,11 +71,19 @@ class Transform(PositionMessage):
     def __init__(self, translate_x=0, translate_z=0, rotate_y=0):
         super(Transform, self).__init__(('f', translate_x), ('f', translate_z), ('f', rotate_y))
 
+# 发送机器人目的地坐标
 class Dest(PositionMessage):
     __tag__ = 'DEST'
 
     def __init__(self, translate_x=0, translate_y=0, translate_z=0):
         super(Dest, self).__init__(('f', translate_x), ('f', translate_y), ('f', translate_z))
+
+# 发送巡逻房间编号
+class Patr(PositionMessage):
+    __tag__ = 'PATR'
+
+    def __init__(self, room=0):
+        super(Patr, self).__init__(('f', room), ('f', 0), ('f', 0))
 
 
 class AddForce(PositionMessage):
