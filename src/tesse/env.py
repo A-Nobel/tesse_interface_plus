@@ -16,6 +16,7 @@ class Env(object):
         image_port=19002,
         step_port=19005,
         # des_port = 9006,
+        done_port = 19009
     ):
         self.simulation_ip = simulation_ip
         self.own_ip = own_ip
